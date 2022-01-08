@@ -1,0 +1,29 @@
+body {
+    background-color: rgb(249, 249, 253);
+}
+header{
+    background-color: rgb(139, 139, 219);
+}
+nav{
+background-color: rgb(216, 216, 238);
+}
+main{
+background-color: rgb(206, 199, 190);
+color: rgb(26, 27, 26);
+margin: auto;
+/*text-align: center;*/
+padding-left: 10px;
+padding: 10px 20px 30px 15 px;
+width: 80%;
+}
+aside{
+    background-color: rgba(33, 228, 82, 0.281);
+}
+footer{
+    background-color: rgb(233, 24, 42);
+    color: burlywood;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    
+}
