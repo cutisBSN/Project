@@ -4,42 +4,99 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Подключаем внешнюю таблицу стилей -->
+    <title>Веб-технологии. Авторизация</title>
+    <link rel="icon" href="../favicon.ico" content-type="image/x-icon"> 
+    <link rel="shortcut icon" href="../favicon.ico" content-type="image/x-icon">
+    <link rel="stylesheet" href="../bootstrap-4.5.3-dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="../bootstrap-4.5.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Подключаем таблицу css-->
     <link rel="stylesheet" type="text/css" href="../css/style.css">
 
-    <title>
-        Регистрация на конференции
-    </title>
+    <script type="text/javascript">
+ 
+      function ValidMail() {
+          var re = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
+          var myMail = document.getElementById('email').value;
+          var valid = re.test(myMail);
+          if (valid) output = 'Адрес эл. почты введен правильно!';
+          else output = 'Адрес электронной почты введен неправильно!';
+          document.getElementById('message').innerHTML = output;
+          return valid;
+      }
+       
+      function ValidPhone() {
+          var re = /^\d[\d\(\)\ -]{12,12}\d$/;
+          var myPhone = document.getElementById('phone').value;
+          var valid = re.test(myPhone);
+          if (valid) output = 'Номер телефона введен правильно!';
+          else output = 'Номер телефона введен неправильно!';
+          document.getElementById('message').innerHTML = document.getElementById('message').innerHTML+'<br />'+output;
+          return valid;
+      }  
+       
+      </script>
+
 </head>
 <body> <!-- шапка сайта -->
     <header>
-        <h1>Веб-технологии</h1>
-<nav>
-    <ul>
-        <li><a href="pages/login.html">Авторизация</a></li>
-        <li><a href="#">Фотогалерея</a></li>
-        <li><a href="#">Сообщения</a></li>
-        <li><a href="#">Вёрстка по макету</a></li>
-    </ul>
-</nav>
+        <h1><img height="80" height="*" src=../img/logo.png style="vertical-align:middle; margin:10px; opacity: 0.4"> Веб-технологии. Регистрация</h1>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" target="_top" href="../index.html">Главная</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" target="_top" href="login.html">Авторизация</a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" target="_top" href="conf_reg.html">Регистрация участников конференции</a>
+              </li>
+
+            <li class="nav-item">
+              <a class="nav-link" target="_top" href="photo.html">Фотогалерея</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="masseges.html">Сообщения</a>
+              </li>
+
+          </ul>
+        </div>
+    </nav>
+    
     </header>
     <!-- основное содержимое -->
     <main>
-        <h2>Регистрация на конференции</h2>
+        <h2>Регистрация участников конференции</h2>
         <form action="" method="">
         <div><label for="user_name">Фамилия, имя, отчество</label>
+            <br>
             <input type="text" name="user_name" id="user_name" required placeholder="Фамилия, имя, отчество" 
-            value="Иванов Иван Иванович"
             pattern="[А-Я][а-я]+[ ][А-Я][а-я]+[ ][А-Я][а-я]+[]*"
             size="20">
             
         </div>
-        <div><label for="tel">Контактный телефон</label>
-            <input type="tel" name="tel" id="tel">
+        <div><label for="tel">Контактный телефон </label>
+            <br>
+            <input type="tel" required name="tel" id="tel" placeholder="1234567890"
+            value="+7"
+            pattern="[+][7]+[0-9]*" minlength="12" maxlength="12" 
+            size="10">
         </div>
         </div>
-        <div><label for="email">Адрес элктронной почты</label>
-            <input type="email" name="email" id="email">
+        <div><label for="email">Адрес электронной почты</label>
+            <br>
+            <input type="email" required name="email" id="email"  placeholder="yourmail@domain.abc">
         </div>
         <div>
             <label for="section">Выберите секцию конференции</label><br>
@@ -48,6 +105,13 @@
                 <option value="fiz">Физика</option>
                 <option value="inf">Информатика</option>
             </select>
+        </div>
+        <div><label for="email">Дата вашего рождения </label>
+            <br>
+            <input type="email" name="email" id="email"  
+            pattern="[0-9][.][/][-]"
+            placeholder="dd.mm.yyyy"
+            size="10">
         </div>
         <div>
             <label for="">Участие с докладом:</label>
@@ -58,9 +122,9 @@
             <textarea name="report" id="report" cols="30" rows="3"></textarea>
         </div>
         <div>
-            <div>Выберите форму участия</div>
-            <input type="radio" checked value="Очная" name="edutype" id="offline"> <label for="">Очная форма</label><br>
-            <input type="radio" value="Дистанционная" name="edutype" id="online"> <label for="">Дистанционная форма</label><br>
+            <div >Выберите форму участия</div>
+            <input type="radio" checked value="Очная" name="edutype" id="offline"> <label for="">Очная форма</label> <br>
+            <input type="radio" value="Дистанционная" name="edutype" id="online"> <label for="">Дистанционная форма</label> <br>
             <input type="radio" value="Смешанная" name="edutype" id="offline_online"> <label for="">Смешанная форма</label>
         </div>
         <div>
@@ -68,12 +132,10 @@
         </div>
         </form>
     </main>
-    <aside>
-        Это боковая панель
-    </aside>
+    
     <!-- подвал сайта -->
     <footer>
-        <h5>2021-2022 учебный год :)</h5>
+        2021-2022 учебный год :) БИ-С-20, Беспяткин С.Н.
     </footer>
 </body>
 </html>

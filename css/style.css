@@ -1,17 +1,20 @@
 body {
-    background-color: rgb(249, 249, 253);
+    background-color: whitesmoke;
+    padding: 20px 50px;
+    margin: auto;
 }
 header{
-    background-color: rgb(139, 139, 219);
+    background-color: whitesmoke;
 }
 nav{
-background-color: rgb(216, 216, 238);
+background-color: whitesmoke;
+text-align: ;
 }
 main{
-background-color: rgb(206, 199, 190);
+background-color: whitesmoke;
 color: rgb(26, 27, 26);
 margin: auto;
-/*text-align: center;*/
+text-align: center;
 padding-left: 10px;
 padding: 10px 20px 30px 15 px;
 width: 80%;
@@ -20,10 +23,23 @@ aside{
     background-color: rgba(33, 228, 82, 0.281);
 }
 footer{
-    background-color: rgb(233, 24, 42);
-    color: burlywood;
+    background-color: whitesmoke;
+    color: darkblue;
     position: fixed;
     bottom: 0px;
     width: 100%;
     
 }
+.tohover:hover {
+    -webkit-transform: scale(1.8);
+    -moz-transform: scale(1.8);
+    -o-transform: scale(1.8);
+    transform: scale(1.8);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    }
+    * {box-sizing: border-box}
+  body {font-family: Verdana, sans-serif; margin:0}
+  .mySlides {display: none}
+  img {vertical-align: middle;}

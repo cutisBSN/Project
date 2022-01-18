@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Подключаем внешнюю таблицу стилей -->
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+
+    <title>
+        Регистрация на конференции
+    </title>
+    <script type="text/javascript">
+ 
+        function ValidMail() {
+            var re = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
+            var myMail = document.getElementById('email').value;
+            var valid = re.test(myMail);
+            if (valid) output = 'Адрес эл. почты введен правильно!';
+            else output = 'Адрес электронной почты введен неправильно!';
+            document.getElementById('message').innerHTML = output;
+            return valid;
+        }
+         
+        function ValidPhone() {
+            var re = /^\d[\d\(\)\ -]{12,12}\d$/;
+            var myPhone = document.getElementById('phone').value;
+            var valid = re.test(myPhone);
+            if (valid) output = 'Номер телефона введен правильно!';
+            else output = 'Номер телефона введен неправильно!';
+            document.getElementById('message').innerHTML = document.getElementById('message').innerHTML+'<br />'+output;
+            return valid;
+        }  
+         
+        </script>
+</head>
+<body> <!-- шапка сайта -->
+    <header>
+        <h1>Веб-технологии</h1>
+<nav>
+    <ul>
+        <li><a href="pages/login.html">Авторизация</a></li>
+        <li><a href="#">Фотогалерея</a></li>
+        <li><a href="#">Сообщения</a></li>
+        <li><a href="#">Вёрстка по макету</a></li>
+    </ul>
+</nav>
+    </header>
+    <!-- основное содержимое -->
+    <main>
+        <h2>Регистрация на конференции</h2>
+        <form action="" method="">
+        <div><label for="user_name">Фамилия, имя, отчество</label>
+            <br>
+            <input type="text" name="user_name" id="user_name" required placeholder="Фамилия, имя, отчество" 
+            pattern="[А-Я][а-я]+[ ][А-Я][а-я]+[ ][А-Я][а-я]+[]*"
+            size="20">
+            
+        </div>
+        <div><label for="tel">Контактный телефон </label>
+            <br>
+            <input type="tel" required name="tel" id="tel" placeholder="1234567890"
+            value="+7"
+            pattern="[+][7]+[0-9]*" minlength="12" maxlength="12" 
+            size="10">
+        </div>
+        </div>
+        <div><label for="email">Адрес электронной почты</label>
+            <br>
+            <input type="email" required name="email" id="email"  placeholder="yourmail@domain.abc">
+        </div>
+        <div>
+            <label for="section">Выберите секцию конференции</label><br>
+            <select name="section" id="">
+                <option value="mat">Математика</option>
+                <option value="fiz">Физика</option>
+                <option value="inf">Информатика</option>
+            </select>
+        </div>
+        <div><label for="email">Дата вашего рождения </label>
+            <br>
+            <input type="email" name="email" id="email"  
+            pattern="[0-9][.][/][-]"
+            placeholder="dd.mm.yyyy"
+            size="10">
+        </div>
+        <div>
+            <label for="">Участие с докладом:</label>
+            <input type="checkbox" name="speaker" id="speaker">
+        </div>
+        <div>
+            <label for="speaker">Введите тему вашего доклада:</label><br>
+            <textarea name="report" id="report" cols="30" rows="3"></textarea>
+        </div>
+        <div>
+            <div >Выберите форму участия</div>
+            <input type="radio" checked value="Очная" name="edutype" id="offline"> <label for="">Очная форма</label> <br>
+            <input type="radio" value="Дистанционная" name="edutype" id="online"> <label for="">Дистанционная форма</label> <br>
+            <input type="radio" value="Смешанная" name="edutype" id="offline_online"> <label for="">Смешанная форма</label>
+        </div>
+        <div>
+            <input type="submit" value="Зарегистрироваться">
+        </div>
+        </form>
+    </main>
+    <!-- подвал сайта -->
+    <footer>
+        <h5>2021-2022 учебный год :)</h5>
+    </footer>
+</body>
+</html>
